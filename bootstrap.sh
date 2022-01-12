@@ -4,7 +4,7 @@ git pull origin main;
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude "bootstrap.sh" \
-        --exclude "setup.sh" \
+		--exclude "setup.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
 }

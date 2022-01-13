@@ -45,12 +45,18 @@ brew install helm
 brew install --cask google-cloud-sdk
 brew install awscli
 
+brew install yarn
+brew install npm
+
 # Install nvim
 brew install neovim
 # Install VSC
 brew install --cask visual-studio-code
 # Install Intellij Idea
 brew install --cask intellij-idea
+
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

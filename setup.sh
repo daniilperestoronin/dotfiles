@@ -55,6 +55,9 @@ brew install --cask visual-studio-code
 # Install Intellij Idea
 brew install --cask intellij-idea
 
+# Install telegram
+brew install --cask telegram-desktop
+
 # Install tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 

@@ -77,6 +77,9 @@ brew install --cask zoom
 # Install chromium
 brew install --cask chromium
 
+# Install keepassx
+brew install --cask keepassx
+
 # Plugins plugins
 
 # Install tmux plugin manager

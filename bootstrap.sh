@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-git pull origin main;
+
+if command -v git &> /dev/null
+then
+    git pull origin main
+fi
+
 
 function doIt() {
 	rsync --exclude ".git/" \

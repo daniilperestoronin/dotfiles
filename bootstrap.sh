@@ -3,6 +3,7 @@ git pull origin main;
 
 function doIt() {
 	rsync --exclude ".git/" \
+		--exclude ".macos" \
 		--exclude "bootstrap.sh" \
 		--exclude "setup.sh" \
 		--exclude "README.md" \

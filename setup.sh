@@ -39,7 +39,7 @@ brew install tmux
 
 # Install programming languages
 brew install openjdk@11
-brew install python@3.9
+brew install python@3.10
 brew install go@1.16
 brew install node@17
 

@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
-opt.colorcolumn = '80'
+opt.colorcolumn = '120'
 opt.termguicolors = true
 --Save undo history
 opt.undofile = true

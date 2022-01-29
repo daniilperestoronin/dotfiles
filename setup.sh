@@ -89,9 +89,7 @@ wait
 git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-# Install powerline fonts
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
+# Install Nerd Fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-roboto-mono-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font

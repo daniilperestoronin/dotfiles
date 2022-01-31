@@ -30,6 +30,9 @@ brew install wget
 brew install grep
 brew install openssh
 
+# Install ctag
+brew install ctags
+
 # Install git
 brew install git
 

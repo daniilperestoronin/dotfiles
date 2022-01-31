@@ -33,6 +33,10 @@ brew install openssh
 # Install ctag
 brew install ctags
 
+# Install ripgrep and fd
+brew install ripgrep
+brew install fd
+
 # Install git
 brew install git
 

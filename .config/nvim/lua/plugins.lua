@@ -62,7 +62,17 @@ require('packer').startup(function()
 
     -- LSP
     -- Highlight, edit, and navigate code using a fast incremental parsing library
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      config = function()
+        require('nvim-treesitter.configs').setup {
+          ensure_installed = {"java", "javascript", "python", "go", "lua", "html", "css", "vue", "json", "yaml", "kotlin", "scala", "rust"},
+          highlight = {
+            enable = true
+          }
+        }
+      end
+      }
     -- Collection of configurations for built-in LSP client
     use 'neovim/nvim-lspconfig'
 end)

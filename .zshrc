@@ -6,6 +6,10 @@ export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
+# Java setup
+export JAVA_HOME="/usr/local/opt/openjdk@11"
+export PATH="$JAVA_HOME/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

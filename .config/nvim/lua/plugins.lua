@@ -122,10 +122,12 @@ local servers = {
   "dockerls",
   "eslint",
   "gopls",
+  "golangci_lint_ls",
   "groovyls",
   "html",
   "jsonls",
   "jdtls",
+  "tsserver",
   "kotlin_language_server",
   "ltex",
   "sumneko_lua",
@@ -136,6 +138,7 @@ local servers = {
   "lemminx",
   "yamlls"
 }
+
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -146,36 +149,23 @@ for _, lsp in pairs(servers) do
   }
 end
 
-
 -- LSP install servers
-local lsp_installer = require "nvim-lsp-installer"
-
+local lsp_installer = require("nvim-lsp-installer")
 -- Include the servers you want to have installed by default below
-local servers = {
-  "bashls",
-  "cssls",
-  "dockerls",
-  "eslint",
-  "gopls",
-  "groovyls",
-  "html",
-  "jsonls",
-  "jdtls",
-  "kotlin_language_server",
-  "ltex",
-  "sumneko_lua",
-  "remark_ls",
-  "pyright",
-  "sqlls",
-  "vuels",
-  "lemminx",
-  "yamlls"
-}
-
 for _, name in pairs(servers) do
-  local server_is_found, server = lsp_installer.get_server(name)
+  local server_is_found, server = lsp_installer .get_server(name)
   if server_is_found and not server:is_installed() then
     print("Installing " .. name)
     server:install()
   end
 end
+
+-- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
+-- or if the server is already installed).
+lsp_installer.on_server_ready(function(server)
+    local opts = {
+        on_attach = on_attach
+    }
+    server:setup(opts)
+end)
+

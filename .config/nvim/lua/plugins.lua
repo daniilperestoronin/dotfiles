@@ -84,6 +84,17 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+    -- integration with git
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      },
+      config = function()
+        require('gitsigns').setup()
+      end
+    }
 end)
 
 --Set colorscheme

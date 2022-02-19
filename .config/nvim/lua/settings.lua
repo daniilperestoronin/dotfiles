@@ -7,7 +7,7 @@ opt.termguicolors = true
 opt.undofile = true
 opt.mouse = 'a'
 
-opt.listchars = { 
+opt.listchars = {
     space = '.',
     tab = '>-'
 }

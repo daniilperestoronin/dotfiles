@@ -112,6 +112,14 @@ require('packer').startup(function()
           require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
       end
     }
+
+    -- Key bindings
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {}
+      end
+    }
 end)
 
 --Set colorscheme

@@ -120,6 +120,14 @@ require('packer').startup(function()
         require("which-key").setup {}
       end
     }
+
+    -- Project detecting
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {}
+      end
+    }
 end)
 
 --Set colorscheme

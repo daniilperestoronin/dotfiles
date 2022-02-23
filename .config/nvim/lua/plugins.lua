@@ -40,6 +40,7 @@ require('packer').startup(function()
             }
         end,
     }
+    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
     -- Navigation
     use {
@@ -117,7 +118,7 @@ require('packer').startup(function()
     use {
       "folke/which-key.nvim",
       config = function()
-        require("which-key").setup {}
+          require("which-key").setup {}
       end
     }
 
@@ -125,7 +126,7 @@ require('packer').startup(function()
     use {
       "ahmedkhalf/project.nvim",
       config = function()
-        require("project_nvim").setup {}
+          require("project_nvim").setup {}
       end
     }
 end)
@@ -164,6 +165,23 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    -- Set autocommands conditional on server_capabilities
+    if client.resolved_capabilities.document_highlight then
+        vim.cmd(
+          [[
+            hi! LspReferenceRead cterm=bold ctermbg=red guibg=#4C566A
+            hi! LspReferenceText cterm=bold ctermbg=red guibg=#4C566A
+            hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#4C566A
+            augroup lsp_document_highlight
+              autocmd! * <buffer>
+              autocmd! CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+              autocmd! CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+            augroup END
+          ]],
+            false
+        )
+    end
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and

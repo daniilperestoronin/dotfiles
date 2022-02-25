@@ -53,6 +53,7 @@ brew install node@17
 brew install yarn
 brew install npm
 brew install maven
+brew install gradle
 
 # Install virtualization and cloud things
 brew install --cask docker

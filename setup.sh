@@ -86,8 +86,8 @@ brew install --cask zoom
 # Install chromium
 brew install --cask chromium
 
-# Install keepassx
-brew install --cask keepassx
+# Install macpass
+brew install --cask macpass
 
 # Plugins plugins
 
@@ -101,4 +101,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 # Install Nerd Fonts
 brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
-brew install --cask font-jetbrains-mono-nerd-font
+

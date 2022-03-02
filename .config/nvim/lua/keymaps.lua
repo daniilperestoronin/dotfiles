@@ -10,3 +10,6 @@ map('n', '<Leader>fp', ':Telescope projects<CR>', {noremap = true})
 
 map('n', '<Leader>ft', ':NvimTreeOpen<CR>', {noremap = true})
 map('n', '<Leader>fc', ':NvimTreeClose<CR>', {noremap = true})
+
+map('n', '<Leader>lt', ':SymbolsOutline<CR>', {noremap = true})
+

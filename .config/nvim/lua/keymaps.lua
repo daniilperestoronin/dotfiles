@@ -13,3 +13,8 @@ map('n', '<Leader>fc', ':NvimTreeClose<CR>', {noremap = true})
 
 map('n', '<Leader>lt', ':SymbolsOutline<CR>', {noremap = true})
 
+map('n', '<Leader>s', ':w<CR>', {noremap = true})
+
+map('n', '<Leader>qa', ':qa<CR>', {noremap = true})
+map('n', '<Leader>qf', ':q<CR>', {noremap = true})
+

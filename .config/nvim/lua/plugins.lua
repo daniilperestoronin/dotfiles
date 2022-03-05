@@ -113,6 +113,7 @@ require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'simrat39/symbols-outline.nvim' -- A tree like view for symbols using the Lsp
+    use "ray-x/lsp_signature.nvim" -- Show function signature when you type
 
     -- integration with git
     use {
@@ -376,3 +377,7 @@ local luadev = require("lua-dev").setup({})
 local lspconfig = require('lspconfig')
 lspconfig.sumneko_lua.setup(luadev)
 
+-- ray-x/lsp_signature.nvim conf
+require "lsp_signature".setup({
+    hint_prefix = ""
+})

@@ -122,6 +122,9 @@ require('packer').startup(function()
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'simrat39/symbols-outline.nvim' -- A tree like view for symbols using the Lsp
     use "ray-x/lsp_signature.nvim" -- Show function signature when you type
+    use "jose-elias-alvarez/null-ls.nvim"
+    use "nvim-lua/plenary.nvim"
+    
 
     -- integration with git
     use {
@@ -210,7 +213,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    -- null_ls formatting
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>lf', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>', opts)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
@@ -389,3 +393,44 @@ lspconfig.sumneko_lua.setup(luadev)
 require "lsp_signature".setup({
     hint_prefix = ""
 })
+
+-- nul-ls setup
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+    sources = {
+        null_ls.builtins.code_actions.eslint,
+        null_ls.builtins.code_actions.proselint,
+	null_ls.builtins.code_actions.statix,
+	null_ls.builtins.completion.spell,
+	null_ls.builtins.diagnostics.actionlint,
+	null_ls.builtins.diagnostics.checkmake,
+	null_ls.builtins.diagnostics.cspell,
+	null_ls.builtins.diagnostics.eslint,
+	null_ls.builtins.diagnostics.flake8,
+	null_ls.builtins.diagnostics.golangci_lint,
+	null_ls.builtins.diagnostics.hadolint,
+	null_ls.builtins.diagnostics.luacheck,
+	null_ls.builtins.diagnostics.markdownlint,
+	null_ls.builtins.diagnostics.protoc_gen_lint,
+	null_ls.builtins.diagnostics.protolint,
+	null_ls.builtins.diagnostics.pylint,
+	null_ls.builtins.diagnostics.stylelint,
+	null_ls.builtins.diagnostics.yamllint,
+	null_ls.builtins.formatting.autopep8,
+	null_ls.builtins.formatting.eslint,
+	null_ls.builtins.formatting.gofmt,
+	null_ls.builtins.formatting.goimports,
+	null_ls.builtins.formatting.google_java_format,
+	null_ls.builtins.formatting.json_tool,
+	null_ls.builtins.formatting.lua_format,
+	null_ls.builtins.formatting.markdownlint,
+	null_ls.builtins.formatting.pg_format,
+	null_ls.builtins.formatting.protolint,
+	null_ls.builtins.formatting.stylelint,
+	null_ls.builtins.formatting.terraform_fmt,
+	null_ls.builtins.formatting.tidy
+    },
+})
+

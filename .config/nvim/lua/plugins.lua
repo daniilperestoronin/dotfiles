@@ -101,6 +101,14 @@ require('packer').startup(function()
           }
       end
     }
+    use {
+     "folke/trouble.nvim", -- list for showing diagnostics, references, telescope results, quickfix
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+         require("trouble").setup {
+    }
+    end
+    }
     -- Collection of configurations for built-in LSP client
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'

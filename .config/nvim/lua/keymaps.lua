@@ -12,6 +12,7 @@ map('n', '<Leader>ft', ':NvimTreeOpen<CR>', {noremap = true})
 map('n', '<Leader>fc', ':NvimTreeClose<CR>', {noremap = true})
 
 map('n', '<Leader>lt', ':SymbolsOutline<CR>', {noremap = true})
+map('n', '<Leader>ld', ':Trouble<CR>', {noremap = true})
 
 map('n', '<Leader>s', ':w<CR>', {noremap = true})
 

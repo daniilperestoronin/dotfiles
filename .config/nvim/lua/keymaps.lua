@@ -1,6 +1,5 @@
 local map = vim.api.nvim_set_keymap
 
-
 vim.g.mapleader = ' '
 
 map('n', '<Leader>ff', ':Telescope find_files<CR>', {noremap = true})
@@ -18,4 +17,3 @@ map('n', '<Leader>s', ':w<CR>', {noremap = true})
 
 map('n', '<Leader>qa', ':qa<CR>', {noremap = true})
 map('n', '<Leader>qf', ':q<CR>', {noremap = true})
-

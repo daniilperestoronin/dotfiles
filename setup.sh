@@ -49,11 +49,29 @@ brew install openjdk@11
 brew install python@3.10
 brew install go@1.17
 brew install node@17
+brew install lua
 
+brew install cmake
 brew install yarn
 brew install npm
 brew install maven
 brew install gradle
+brew install luarocks
+
+# Install language tools
+# go
+brew install golangci-lint
+go install golang.org/x/tools/cmd/goimports@latest
+# python
+pip3 install pylint
+pip3 install flake8
+#lua
+luarocks install luacheck
+luarocks install --server=https://luarocks.org/dev luaformatter
+# yaml
+pip3 install yamllint
+#spell
+npm install -g cspel
 
 # Install virtualization and cloud things
 brew install --cask docker

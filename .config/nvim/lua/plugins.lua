@@ -114,6 +114,7 @@ require("packer").startup(function()
         requires = {"nvim-lua/plenary.nvim"},
         config = function() require("gitsigns").setup() end
     })
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- Comments
     use({

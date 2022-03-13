@@ -16,7 +16,7 @@ map('n', '<Leader>ld', ':Trouble<CR>', {noremap = true})
 
 -- Git
 map('n', '<Leader>gd', ':DiffviewOpen<CR>', {noremap = true})
-map('n', '<Leader>gh', ':DiffviewFileHistroy<CR>', {noremap = true})
+map('n', '<Leader>gh', ':DiffviewFileHistory<CR>', {noremap = true})
 map('n', '<Leader>gc', ':DiffviewClose<CR>', {noremap = true})
 map('n', '<Leader>gb', ':Gitsigns toggle_current_line_blame<CR>',
     {noremap = true})

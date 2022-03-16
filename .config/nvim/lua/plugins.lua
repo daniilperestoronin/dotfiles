@@ -353,8 +353,8 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
+-- lua-dev setup
 local luadev = require("lua-dev").setup({})
-
 local lspconfig = require("lspconfig")
 lspconfig.sumneko_lua.setup(luadev)
 
@@ -363,7 +363,6 @@ require("lsp_signature").setup({hint_prefix = ""})
 
 -- nul-ls setup
 local null_ls = require("null-ls")
-
 null_ls.setup({
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
     sources = {

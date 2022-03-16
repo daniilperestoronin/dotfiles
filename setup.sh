@@ -59,6 +59,8 @@ brew install gradle
 brew install luarocks
 
 # Install language tools
+# Java
+brew install google-java-format
 # go
 brew install golangci-lint
 go install golang.org/x/tools/cmd/goimports@latest

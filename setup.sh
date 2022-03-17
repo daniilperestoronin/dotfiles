@@ -33,7 +33,8 @@ brew install openssh
 # Install ctag
 brew install ctags
 
-# Install ripgrep and fd
+# Install fzf, ripgrep and fd
+brew install fzf
 brew install ripgrep
 brew install fd
 

@@ -108,13 +108,17 @@ require("packer").startup(function()
     use("jose-elias-alvarez/null-ls.nvim")
     use("nvim-lua/plenary.nvim")
 
+    -- DAP
+    use('mfussenegger/nvim-dap')
+    use("Pocco81/DAPInstall.nvim")
+
     -- integration with git
     use({
         "lewis6991/gitsigns.nvim",
         requires = {"nvim-lua/plenary.nvim"},
         config = function() require("gitsigns").setup() end
     })
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
 
     -- Comments
     use({
@@ -393,3 +397,9 @@ null_ls.setup({
         null_ls.builtins.formatting.stylelint, null_ls.builtins.formatting.tidy
     }
 })
+
+-- DAP
+local dap_install = require("dap-install")
+
+dap_install.setup({installation_path = vim.fn.stdpath("data") .. "/dapinstall/"})
+dap_install.config("python", {})

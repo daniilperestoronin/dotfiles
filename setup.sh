@@ -68,6 +68,7 @@ go install golang.org/x/tools/cmd/goimports@latest
 # python
 pip3 install pylint
 pip3 install flake8
+brew install autopep8
 #lua
 luarocks install luacheck
 luarocks install --server=https://luarocks.org/dev luaformatter

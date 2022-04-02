@@ -14,6 +14,14 @@ map('n', '<Leader>fc', ':NvimTreeClose<CR>', {noremap = true})
 map('n', '<Leader>lt', ':SymbolsOutline<CR>', {noremap = true})
 map('n', '<Leader>ld', ':Trouble<CR>', {noremap = true})
 
+-- Dap
+map('n', '<Leader>db', ':lua require\'dap\'.toggle_breakpoint()<CR>',
+    {noremap = true}) -- Creates or removes a breakpoint at the current line.
+map('n', '<Leader>dc', ':lua require\'dap\'.clear_breakpoints()<CR>',
+    {noremap = true}) -- Removes all breakpoints
+map('n', '<Leader>dl', ':lua require\'dap\'.list_breakpoints()<CR>',
+    {noremap = true}) -- Lists all breakpoints and log points in quickfix window.
+
 -- Git
 map('n', '<Leader>gd', ':DiffviewOpen<CR>', {noremap = true})
 map('n', '<Leader>gh', ':DiffviewFileHistory<CR>', {noremap = true})

@@ -5,6 +5,10 @@
 export JAVA_HOME="/usr/local/opt/openjdk@11"
 export PATH="$JAVA_HOME/bin:$PATH"
 
+# Python setup
+alias python='python3'
+alias pip='pip3'
+
 # Go setup
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"

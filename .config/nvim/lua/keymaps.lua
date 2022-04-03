@@ -35,3 +35,7 @@ map('n', '<Leader>s', ':w<CR>', {noremap = true})
 
 map('n', '<Leader>qa', ':qa<CR>', {noremap = true})
 map('n', '<Leader>qf', ':q<CR>', {noremap = true})
+
+map('n', '<Leader>n', '<C-w><C-w>', {noremap = true})
+map('n', '<Leader>o', '<C-o>', {noremap = true})
+

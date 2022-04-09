@@ -58,6 +58,7 @@ brew install npm
 brew install maven
 brew install gradle
 brew install luarocks
+brew install protobuf
 
 # Install language tools
 # Java
@@ -69,13 +70,16 @@ go install golang.org/x/tools/cmd/goimports@latest
 pip3 install pylint
 pip3 install flake8
 brew install autopep8
-#lua
+# lua
 luarocks install luacheck
 luarocks install --server=https://luarocks.org/dev luaformatter
 # yaml
 pip3 install yamllint
-#spell
+# spell
 npm install -g cspel
+# protobuf
+brew tap yoheimuta/protolint
+brew install protolint
 
 # Install virtualization and cloud things
 brew install --cask docker

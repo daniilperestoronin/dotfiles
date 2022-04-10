@@ -40,6 +40,7 @@ brew install fd
 
 # Install git
 brew install git
+brew install --cask gitahead
 
 # Install terminal things
 brew install --cask alacritty

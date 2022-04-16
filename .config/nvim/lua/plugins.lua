@@ -110,7 +110,7 @@ require("packer").startup(function()
 
     -- DAP
     use('mfussenegger/nvim-dap')
-    use("Pocco81/DAPInstall.nvim")
+    use('Pocco81/dap-buddy.nvim')
 
     -- integration with git
     use({
@@ -172,6 +172,38 @@ vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>",
 vim.api.nvim_set_keymap("n", "<space>q",
                         "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
+local signs = {
+    {name = "DiagnosticSignError", text = ""},
+    {name = "DiagnosticSignWarn", text = ""},
+    {name = "DiagnosticSignHint", text = ""},
+    {name = "DiagnosticSignInfo", text = ""}
+}
+
+for _, sign in ipairs(signs) do
+    vim.fn.sign_define(sign.name,
+                       {texthl = sign.name, text = sign.text, numhl = ""})
+end
+
+local config = {
+    -- disable virtual text
+    virtual_text = false,
+    -- show signs
+    signs = {active = signs},
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+        focusable = false,
+        style = "minimal",
+        border = "rounded",
+        source = "always",
+        header = "",
+        prefix = ""
+    }
+}
+
+vim.diagnostic.config(config)
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -213,6 +245,9 @@ local on_attach = function(client, bufnr)
     -- null_ls formatting
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>lf",
                                 "<cmd>lua vim.lsp.buf.formatting_sync()<CR>",
+                                opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gl",
+                                '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
                                 opts)
 
     -- Set autocommands conditional on server_capabilities
@@ -382,6 +417,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.protoc_gen_lint,
         null_ls.builtins.diagnostics.protolint,
+        null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.yamllint,
         null_ls.builtins.formatting.autopep8,
@@ -397,8 +433,3 @@ null_ls.setup({
     }
 })
 
--- DAP
-local dap_install = require("dap-install")
-
-dap_install.setup({installation_path = vim.fn.stdpath("data") .. "/dapinstall/"})
-dap_install.config("python", {})

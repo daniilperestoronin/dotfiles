@@ -1,18 +1,23 @@
-local fn = vim.fn
+local v_fn = vim.fn
+local v_cmd = vim.cmd
+local v_api = vim.api
+local v_lsp = vim.lsp
+local v_o = vim.o
+local v_diag = vim.diagnostic
 
 -- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
+local install_path = v_fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if v_fn.empty(v_fn.glob(install_path)) > 0 then
+    PACKER_BOOTSTRAP = v_fn.system({
         "git", "clone", "--depth", "1",
         "https://github.com/wbthomason/packer.nvim", install_path
     })
     print("Installing packer close and reopen Neovim...")
-    vim.cmd([[packadd packer.nvim]])
+    v_cmd([[packadd packer.nvim]])
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
+v_cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
@@ -156,20 +161,20 @@ require("packer").startup(function()
 end)
 
 -- Set colorscheme
-vim.o.termguicolors = true
-vim.cmd([[colorscheme nord]])
+v_o.termguicolors = true
+v_cmd([[colorscheme nord]])
 
 -- LSP config
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("n", "<space>e",
+v_api.nvim_set_keymap("n", "<space>e",
                         "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>",
+v_api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>",
                         opts)
-vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>",
+v_api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>",
                         opts)
-vim.api.nvim_set_keymap("n", "<space>q",
+v_api.nvim_set_keymap("n", "<space>q",
                         "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 local signs = {
@@ -180,7 +185,7 @@ local signs = {
 }
 
 for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name,
+    v_fn.sign_define(sign.name,
                        {texthl = sign.name, text = sign.text, numhl = ""})
 end
 
@@ -202,57 +207,57 @@ local config = {
     }
 }
 
-vim.diagnostic.config(config)
+v_diag.config(config)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    v_api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gD",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "gD",
                                 "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "gd",
                                 "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "K",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "K",
                                 "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gi",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "gi",
                                 "<cmd>lua vim.lsp.buf.implementation()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<C-k>",
                                 "<cmd>lua vim.lsp.buf.signature_help()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wa",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wa",
                                 "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wr",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wr",
                                 "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>wl",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wl",
                                 "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>D",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>D",
                                 "<cmd>lua vim.lsp.buf.type_definition()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>rn",
                                 "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>ca",
                                 "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gr",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "gr",
                                 "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     -- null_ls formatting
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>lf",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "<space>lf",
                                 "<cmd>lua vim.lsp.buf.formatting_sync()<CR>",
                                 opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gl",
+    v_api.nvim_buf_set_keymap(bufnr, "n", "gl",
                                 '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
                                 opts)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
-        vim.cmd([[
+        v_cmd([[
             hi! LspReferenceRead cterm=bold ctermbg=red guibg=#4C566A
             hi! LspReferenceText cterm=bold ctermbg=red guibg=#4C566A
             hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#4C566A
@@ -303,7 +308,7 @@ local kind_icons = {
 }
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = v_lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- luasnip setup

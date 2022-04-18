@@ -6,7 +6,8 @@ local v_o = vim.o
 local v_diag = vim.diagnostic
 
 -- Automatically install packer
-local install_path = v_fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = v_fn.stdpath("data") ..
+                         "/site/pack/packer/start/packer.nvim"
 if v_fn.empty(v_fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = v_fn.system({
         "git", "clone", "--depth", "1",
@@ -37,8 +38,7 @@ packer.init({
     }
 })
 
-local use = require("packer").use
-require("packer").startup(function()
+packer.startup(function(use)
     -- Package manager
     use("wbthomason/packer.nvim")
 
@@ -169,13 +169,11 @@ v_cmd([[colorscheme nord]])
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = {noremap = true, silent = true}
 v_api.nvim_set_keymap("n", "<space>e",
-                        "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-v_api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>",
-                        opts)
-v_api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>",
-                        opts)
+                      "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+v_api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+v_api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 v_api.nvim_set_keymap("n", "<space>q",
-                        "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+                      "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 local signs = {
     {name = "DiagnosticSignError", text = ""},
@@ -186,7 +184,7 @@ local signs = {
 
 for _, sign in ipairs(signs) do
     v_fn.sign_define(sign.name,
-                       {texthl = sign.name, text = sign.text, numhl = ""})
+                     {texthl = sign.name, text = sign.text, numhl = ""})
 end
 
 local config = {
@@ -218,42 +216,38 @@ local on_attach = function(client, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     v_api.nvim_buf_set_keymap(bufnr, "n", "gD",
-                                "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "gd",
-                                "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "K",
-                                "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "gi",
-                                "<cmd>lua vim.lsp.buf.implementation()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<C-k>",
-                                "<cmd>lua vim.lsp.buf.signature_help()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wa",
-                                "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>",
+                              opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wr",
-                                "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>",
+                              opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>wl",
-                                "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
-                                opts)
+                              "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+                              opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>D",
-                                "<cmd>lua vim.lsp.buf.type_definition()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>rn",
-                                "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>ca",
-                                "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "gr",
-                                "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+                              "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     -- null_ls formatting
     v_api.nvim_buf_set_keymap(bufnr, "n", "<space>lf",
-                                "<cmd>lua vim.lsp.buf.formatting_sync()<CR>",
-                                opts)
+                              "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
     v_api.nvim_buf_set_keymap(bufnr, "n", "gl",
-                                '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
-                                opts)
+                              '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
+                              opts)
 
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
@@ -437,4 +431,3 @@ null_ls.setup({
         null_ls.builtins.formatting.stylelint, null_ls.builtins.formatting.tidy
     }
 })
-

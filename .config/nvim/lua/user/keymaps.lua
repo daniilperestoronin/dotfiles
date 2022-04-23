@@ -17,7 +17,7 @@ map('n', '<Leader>ld', ':Trouble<CR>', {noremap = true})
 -- Dap
 map('n', '<Leader>db', ':lua require\'dap\'.toggle_breakpoint()<CR>',
     {noremap = true}) -- Creates or removes a breakpoint at the current line.
-map('n', '<Leader>dc', ':lua require\'dap\'.clear_breakpoints()<CR>',
+map('n', '<Leader>dc', ':lua require\'dap\'.continue()<CR>',
     {noremap = true}) -- Removes all breakpoints
 map('n', '<Leader>dl', ':lua require\'dap\'.list_breakpoints()<CR>',
     {noremap = true}) -- Lists all breakpoints and log points in quickfix window.

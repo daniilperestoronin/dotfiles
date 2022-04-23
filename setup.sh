@@ -67,6 +67,7 @@ brew install google-java-format
 # go
 brew install golangci-lint
 go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
 # python
 pip3 install pylint
 pip3 install flake8

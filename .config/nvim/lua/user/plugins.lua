@@ -115,7 +115,6 @@ packer.startup(function(use)
 
     -- DAP
     use('mfussenegger/nvim-dap')
-    use('Pocco81/dap-buddy.nvim')
 
     -- integration with git
     use({

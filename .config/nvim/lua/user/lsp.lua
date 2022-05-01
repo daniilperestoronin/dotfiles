@@ -167,7 +167,6 @@ null_ls.setup({
         null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.diagnostics.protoc_gen_lint,
         null_ls.builtins.diagnostics.protolint,
-        null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.yamllint,
         null_ls.builtins.formatting.autopep8,

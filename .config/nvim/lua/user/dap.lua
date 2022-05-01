@@ -1,8 +1,9 @@
 local dap = require('dap')
 
 vim.fn.sign_define('DapBreakpoint',
-                   {text = '🛑', texthl = '', linehl = '', numhl = ''})
+                   {text = '', texthl = '', linehl = '', numhl = ''})
 
+-- Setup DAP for Go
 dap.adapters.go = function(callback, config)
     local stdout = vim.loop.new_pipe(false)
     local handle
@@ -45,6 +46,34 @@ dap.configurations.go = {
         request = "launch",
         mode = "test",
         program = "./${relativeFileDirname}"
+    }
+}
+
+-- Setup DAP for Python
+require('dap-python').setup('python')
+
+-- Setup DAP for JS
+dap.adapters.node2 = {
+    type = 'executable',
+    command = 'node',
+    args = {'/usr/local/lib/node_modules/node-debug/bin/node-debug.js'}
+}
+dap.configurations.javascript = {
+    {
+        name = 'Launch',
+        type = 'node2',
+        request = 'launch',
+        program = '${file}',
+        cwd = vim.fn.getcwd(),
+        sourceMaps = true,
+        protocol = 'inspector',
+        console = 'integratedTerminal'
+    }, {
+        -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+        name = 'Attach to process',
+        type = 'node2',
+        request = 'attach',
+        processId = require'dap.utils'.pick_process
     }
 }
 

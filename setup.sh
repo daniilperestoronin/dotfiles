@@ -132,3 +132,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
 
+# Use zsh by default
+chsh -s /bin/zsh

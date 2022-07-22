@@ -85,6 +85,9 @@ npm install -g cspel
 brew tap yoheimuta/protolint
 brew install protolint
 
+# Install static site generators
+brew install hugo
+
 # Install virtualization and cloud things
 brew install --cask docker
 brew install kubectl

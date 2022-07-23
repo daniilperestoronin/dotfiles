@@ -2,9 +2,7 @@
 
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Hombrew"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
-    source ~/.zshrc
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "Homebrew has installed successfully"
 else
     echo "Updating Homebrew"

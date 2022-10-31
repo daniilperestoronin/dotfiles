@@ -142,8 +142,8 @@ lsp_installer.on_server_ready(function(server)
     server:setup({on_attach = on_attach})
 end)
 
--- lua-dev setup
-local luadev = require("lua-dev").setup({})
+-- neodev setup
+local luadev = require("neodev").setup({})
 local lspconfig = require("lspconfig")
 lspconfig.sumneko_lua.setup(luadev)
 

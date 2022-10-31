@@ -3,7 +3,9 @@
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Hombrew"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo "Homebrew has installed successfully"
+    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+    eval $(/opt/homebrew/bin/brew shellenv)
+    echo "Homebrew has installed successfully" 
 else
     echo "Updating Homebrew"
     # Make sure we’re using the latest Homebrew.

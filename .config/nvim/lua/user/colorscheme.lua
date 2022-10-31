@@ -3,4 +3,9 @@ local cmd = vim.cmd
 
 -- Set colorscheme
 o.termguicolors = true
-cmd([[colorscheme nord]])
+
+require('onedark').setup {
+    style = 'warm'
+}
+require('onedark').load()
+

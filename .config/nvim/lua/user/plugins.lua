@@ -40,14 +40,16 @@ packer.startup(function(use)
 
     -- Color scheme
     use("arcticicestudio/nord-vim")
+    use("navarasu/onedark.nvim")
+    use("nvim-tree/nvim-web-devicons")
     use({
         "nvim-lualine/lualine.nvim",
-        requires = {"kyazdani42/nvim-web-devicons", opt = true},
+        requires = {"nvim-tree/nvim-web-devicons", opt = true},
         config = function() require("lualine").setup() end
     })
     use({
         "akinsho/bufferline.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
+        requires = "nvim-tree/nvim-web-devicons",
         config = function()
             require("bufferline").setup({
                 options = {
@@ -64,7 +66,7 @@ packer.startup(function(use)
     -- Navigation
     use({
         "kyazdani42/nvim-tree.lua",
-        requires = {"kyazdani42/nvim-web-devicons"},
+        requires = {"nvim-tree/nvim-web-devicons"},
         config = function() require("nvim-tree").setup({}) end
     })
     use("majutsushi/tagbar")
@@ -94,7 +96,7 @@ packer.startup(function(use)
     })
     use({
         "folke/trouble.nvim", -- list for showing diagnostics, references, telescope results, quickfix
-        requires = "kyazdani42/nvim-web-devicons",
+        requires = "nvim-tree/nvim-web-devicons",
         config = function() require("trouble").setup({}) end
     })
     -- Collection of configurations for built-in LSP client
@@ -135,7 +137,7 @@ packer.startup(function(use)
     -- Greeter
     use({
         "goolord/alpha-nvim",
-        requires = {"kyazdani42/nvim-web-devicons"},
+        requires = {"nvim-tree/nvim-web-devicons"},
         config = function()
             require("alpha").setup(require("alpha.themes.dashboard").config)
         end
@@ -154,7 +156,7 @@ packer.startup(function(use)
     })
 
     -- dev setup for init.lua
-    use("folke/lua-dev.nvim")
+    use("folke/neodev.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

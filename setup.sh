@@ -2,10 +2,8 @@
 
 if [[ $(command -v brew) == "" ]]; then
     echo "Installing Hombrew"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
-    eval $(/opt/homebrew/bin/brew shellenv)
-    echo "Homebrew has installed successfully" 
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Homebrew has installed successfully"
 else
     echo "Updating Homebrew"
     # Make sure we’re using the latest Homebrew.
@@ -85,6 +83,9 @@ npm install -g cspel
 brew tap yoheimuta/protolint
 brew install protolint
 
+# Install static site generators
+brew install hugo
+
 # Install virtualization and cloud things
 brew install --cask docker
 brew install kubectl
@@ -132,3 +133,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 brew tap homebrew/cask-fonts
 brew install --cask font-roboto-mono-nerd-font
 
+# Use zsh by default
+chsh -s /bin/zsh

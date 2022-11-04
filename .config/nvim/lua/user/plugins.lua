@@ -55,8 +55,7 @@ packer.startup(function(use)
                 options = {
                     offsets = {{filetype = "NvimTree", text = "File Explorer"}},
                     diagnostics = "nvim_lsp",
-                    show_tab_indicators = false,
-                    separator_style = "slant"
+                    show_tab_indicators = false
                 }
             })
         end

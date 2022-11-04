@@ -38,8 +38,12 @@ brew install fzf
 brew install ripgrep
 brew install fd
 
+# Install utils
+brew install bat
+
 # Install git
 brew install git
+brew install git-delta
 brew install --cask gitahead
 
 # Install terminal things

@@ -140,3 +140,9 @@ brew install --cask font-roboto-mono-nerd-font
 
 # Use zsh by default
 chsh -s /bin/zsh
+
+read -p "Are you what to update macOS settings? (y/n)" -n 1;
+echo "";
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	sh .macos
+fi

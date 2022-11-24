@@ -26,9 +26,3 @@ echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	doIt;
 fi
-
-read -p "Are you what to update macOS settings? (y/n)" -n 1;
-echo "";
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sh .macos
-fi

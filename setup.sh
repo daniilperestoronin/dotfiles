@@ -51,10 +51,10 @@ brew install --cask alacritty
 brew install tmux
 
 # Install programming languages
-brew install openjdk@11
-brew install python@3.10
-brew install go@1.17
-brew install node@17
+brew install openjdk
+brew install python
+brew install go
+brew install node
 brew install lua
 
 brew install cmake
@@ -110,8 +110,6 @@ brew install --cask bloomrpc
 brew install neovim
 # Install VSC
 brew install --cask visual-studio-code
-# Install Intellij Idea
-brew install --cask intellij-idea
 
 # Install telegram
 brew install --cask telegram-desktop

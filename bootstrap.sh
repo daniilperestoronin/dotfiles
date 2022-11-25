@@ -10,7 +10,8 @@ function doIt() {
 	rsync --exclude ".git/" \
 		--exclude ".macos" \
 		--exclude "bootstrap.sh" \
-		--exclude "setup.sh" \
+		--exclude "linux.setup.sh" \
+		--exclude "mac.setup.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
 }

@@ -1,23 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Java setup
-export JAVA_HOME="/usr/local/opt/openjdk@11"
-export PATH="$JAVA_HOME/bin:$PATH"
-
-# Python setup
-alias python='python3'
-alias pip='pip3'
-
-# Go setup
-export GOPATH=$HOME/go
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-
-# Lua setup
-export PATH="/usr/local/opt/lua@5.3/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/lua@5.3/lib"
-export CPPFLAGS="-I/usr/local/opt/lua@5.3/include"
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

@@ -12,7 +12,7 @@ else
     brew upgrade
 fi
 
-# Save Homebrew’s installed location.
+# Save Homebrew’s installed		--exclude "mac.setup.sh" \ location.
 BREW_PREFIX=$(brew --prefix)
 
 # Install GNU core utilities (those that come with macOS are outdated).
@@ -28,7 +28,6 @@ brew install wget
 
 # Install more recent versions of some macOS tools.
 brew install grep
-brew install openssh
 
 # Install ctag
 brew install ctags
@@ -43,8 +42,6 @@ brew install bat
 
 # Install git
 brew install git
-brew install git-delta
-brew install --cask gitahead
 
 # Install terminal things
 brew install --cask alacritty
@@ -109,7 +106,7 @@ brew install --cask bloomrpc
 # Install nvim
 brew install neovim
 # Install VSC
-brew install --cask visual-studio-code
+brew install --cask vscodium
 
 # Install telegram
 brew install --cask telegram-desktop

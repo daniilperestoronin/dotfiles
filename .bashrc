@@ -4,6 +4,8 @@ case $- in
     *) return;;
 esac
 
+export PATH=$PATH:$HOME/.cargo/bin
+
 # Path to your oh-my-bash installation.
 export OSH='/Users/dperestoron/.oh-my-bash'
 

@@ -28,7 +28,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 apt -y install make \
     git \
     tmux \
-    neovim \
     findutils \
     grep \
     bat \
@@ -38,6 +37,7 @@ apt -y install make \
 
 cargo install alacritty
 
+snap install --beta nvim --classic
 snap install codium --classic
 
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1

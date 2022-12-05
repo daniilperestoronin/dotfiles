@@ -9,9 +9,8 @@
     "editor.dragAndDrop": false,
     "editor.folding": false,
     "editor.showFoldingControls": "mouseover",
-    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "editor.fontSize": 17,
+    "editor.fontSize": 14,
     "explorer.openEditors.visible": 0,
     "editor.glyphMargin": false,
     "editor.minimap.enabled": false,
@@ -85,7 +84,7 @@
   
     // Terminal:
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.env.osx": {
       "SOBOLE_THEME_MODE": "dark",
     },

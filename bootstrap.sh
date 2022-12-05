@@ -14,7 +14,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
         bash mac.setup.sh
 	else
-		echo "ERROR: unknown system type"
+		echo "SETUP ERROR: unknown system type"
 	fi
 fi
 
@@ -22,4 +22,12 @@ read -p "Are you whant to copy dotfiles in your home directory(This may overwrit
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	cp -a ./.config .bashrc .zshrc .tmux.conf ~
+	
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        cp ./vscode/settings.json $HOME/.config/Code/User/
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+        cp ./vscode/settings.json $HOME/Library/Application\ Support/Code/User/
+	else
+		echo "COPY VSCODE SETTINGS ERROR: unknown system type"
+	fi
 fi

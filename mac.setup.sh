@@ -106,7 +106,7 @@ brew install --cask bloomrpc
 # Install nvim
 brew install neovim
 # Install VSC
-brew install --cask vscodium
+brew install --cask visual-studio-code
 
 # Install telegram
 brew install --cask telegram-desktop

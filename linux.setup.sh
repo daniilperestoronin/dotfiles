@@ -38,7 +38,10 @@ apt -y install make \
 cargo install alacritty
 
 snap install --beta nvim --classic
-snap install codium --classic
+pip3 install pynvim
+npm install -g neovim
+
+snap install code--classic
 
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
 go install golang.org/x/tools/cmd/goimports@latest

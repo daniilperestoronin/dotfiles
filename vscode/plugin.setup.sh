@@ -10,3 +10,6 @@ code --install-extension rust-lang.rust-analyzer
 code --install-extension vue.volar
 
 code --install-extension akamud.vscode-theme-onedark
+
+code --install-extension hediet.vscode-drawio
+

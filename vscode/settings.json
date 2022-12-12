@@ -139,7 +139,7 @@
     "rust-analyzer.inlayHints.enable": false,
   
     // Theme:
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Nord",
   
     "editor.semanticHighlighting.enabled": false,
     "workbench.colorCustomizations": {

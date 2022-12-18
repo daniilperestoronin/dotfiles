@@ -1,165 +1,199 @@
 {
-    // Debug:
-    "debug.allowBreakpointsEverywhere": true,
-  
-    // Editor:
-    "editor.accessibilitySupport": "off",
-    "editor.codeLens": true,
-    "editor.colorDecorators": true,
-    "editor.dragAndDrop": false,
-    "editor.folding": false,
-    "editor.showFoldingControls": "mouseover",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 13,
-    "explorer.openEditors.visible": 0,
-    "editor.glyphMargin": false,
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "all",
-    "editor.renderLineHighlight": "none",
-    "editor.hideCursorInOverviewRuler": false,
-    "explorer.compactFolders": false,
-    "editor.occurrencesHighlight": false,
-    "editor.overviewRulerBorder": false,
-    "editor.bracketPairColorization.enabled": false,
-    "editor.rulers": [
-      80
-    ],
-    "editor.scrollBeyondLastLine": false,
-    "editor.snippetSuggestions": "none",
-    "editor.cursorSurroundingLines": 3,
-    "editor.useTabStops": true,
-    "editor.formatOnPaste": false,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 80,
-    "editor.hover.enabled": false,
-    "editor.gotoLocation.multipleReferences": "peek",
-    "editor.gotoLocation.multipleDefinitions": "peek",
-    "editor.gotoLocation.multipleDeclarations": "peek",
-    "editor.gotoLocation.multipleImplementations": "peek",
-    "editor.gotoLocation.multipleTypeDefinitions": "peek",
-    "explorer.confirmDelete": false,
-    "explorer.decorations.badges": false,
-    "extensions.ignoreRecommendations": true,
-    "diffEditor.renderSideBySide": false,
-  
-    // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'.
-    // Helps to avoid ambiguity between inserting new lines or accepting suggestions.
-    // The value 'smart' means only accept a suggestion with Enter
-    // when it makes a textual change.
-    "editor.acceptSuggestionOnEnter": "on",
-    "editor.parameterHints.enabled": false,
-    "editor.tabCompletion": "off",
-  
-    // Files:
-    "files.associations": {
-      ".babelrc": "jsonc",
-      ".eslintrc": "jsonc",
-      "*.pyi": "python",
-      "*.bats": "shellscript",
+  // Debug:
+  "debug.allowBreakpointsEverywhere": true,
+  // Editor:
+  "editor.accessibilitySupport": "off",
+  "editor.codeLens": true,
+  "editor.colorDecorators": true,
+  "editor.dragAndDrop": false,
+  "editor.folding": false,
+  "editor.showFoldingControls": "mouseover",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "explorer.openEditors.visible": 0,
+  "editor.glyphMargin": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.renderLineHighlight": "none",
+  "editor.hideCursorInOverviewRuler": false,
+  "explorer.compactFolders": false,
+  "editor.occurrencesHighlight": false,
+  "editor.overviewRulerBorder": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.rulers": [
+    80
+  ],
+  "editor.scrollBeyondLastLine": false,
+  "editor.snippetSuggestions": "none",
+  "editor.cursorSurroundingLines": 3,
+  "editor.useTabStops": true,
+  "editor.formatOnPaste": false,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.hover.enabled": false,
+  "editor.gotoLocation.multipleReferences": "peek",
+  "editor.gotoLocation.multipleDefinitions": "peek",
+  "editor.gotoLocation.multipleDeclarations": "peek",
+  "editor.gotoLocation.multipleImplementations": "peek",
+  "editor.gotoLocation.multipleTypeDefinitions": "peek",
+  "explorer.confirmDelete": false,
+  "explorer.decorations.badges": false,
+  "extensions.ignoreRecommendations": true,
+  "diffEditor.renderSideBySide": false,
+  // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'.
+  // Helps to avoid ambiguity between inserting new lines or accepting suggestions.
+  // The value 'smart' means only accept a suggestion with Enter
+  // when it makes a textual change.
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.parameterHints.enabled": false,
+  "editor.tabCompletion": "off",
+  // Files:
+  "files.associations": {
+    ".babelrc": "jsonc",
+    ".eslintrc": "jsonc",
+    "*.pyi": "python",
+    "*.bats": "shellscript",
+  },
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/__pycache__": true,
+    "**/.cache": true,
+    "**/.idea": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.venv": true,
+    "**/.coverage": true,
+    "**/*.py[co]": true,
+    "**/htmlcoverage": true,
+    "**/docs/build": true,
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  // Stats and telemetry:
+  "telemetry.telemetryLevel": "off",
+  // Terminal:
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.env.osx": {
+    "SOBOLE_THEME_MODE": "dark",
+  },
+  "terminal.integrated.enableBell": true,
+  // Workbench:
+  "breadcrumbs.enabled": false,
+  "window.clickThroughInactive": false,
+  "window.newWindowDimensions": "maximized",
+  "workbench.editor.labelFormat": "medium",
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": false,
+  "workbench.tips.enabled": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.editor.showTabs": false,
+  "workbench.editor.highlightModifiedTabs": false,
+  "workbench.editor.showIcons": false,
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "workbench.layoutControl.enabled": false,
+  "merge-conflict.autoNavigateNextConflict.enabled": false,
+  // Tools, extensions, and languages:
+  "problems.decorations.enabled": false,
+  "git.autofetch": false,
+  "git.showInlineOpenFileAction": false,
+  "git.autorefresh": true,
+  "git.decorations.enabled": true,
+  "python.formatting.provider": "none",
+  "python.terminal.activateEnvironment": true,
+  "python.linting.enabled": false,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportUnusedVariable": "none",
+  },
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vetur.completion.autoImport": false,
+  "vetur.experimental.templateInterpolationService": true,
+  "rust-analyzer.inlayHints.enable": false,
+  // vim settings
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
     },
-    "files.autoSave": "onFocusChange",
-    "files.exclude": {
-      "**/.DS_Store": true,
-  
-      "**/node_modules": true,
-      "**/bower_components": true,
-  
-      "**/__pycache__": true,
-      "**/.cache": true,
-      "**/.idea": true,
-      "**/.pytest_cache": true,
-      "**/.mypy_cache": true,
-      "**/.venv": true,
-      "**/.coverage": true,
-      "**/*.py[co]": true,
-      "**/htmlcoverage": true,
-      "**/docs/build": true,
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.view.search"
+      ]
     },
-    "workbench.editorAssociations": {
-      "*.ipynb": "jupyter.notebook.ipynb"
+    {
+      "before": [
+        "<leader>",
+        "g"
+      ],
+      "commands": [
+        "workbench.view.scm"
+      ]
     },
-  
-    // Stats and telemetry:
-    "telemetry.telemetryLevel": "off",
-  
-    // Terminal:
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.env.osx": {
-      "SOBOLE_THEME_MODE": "dark",
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "workbench.view.debug"
+      ]
     },
-    "terminal.integrated.enableBell": true,
-  
-    // Workbench:
-    "breadcrumbs.enabled": false,
-    "window.clickThroughInactive": false,
-    "window.newWindowDimensions": "maximized",
-  
-    "workbench.editor.labelFormat": "medium",
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.visible": false,
-    "workbench.tips.enabled": false,
-    "workbench.tree.renderIndentGuides": "none",
-    "workbench.editor.showTabs": false,
-    "workbench.editor.highlightModifiedTabs": false,
-    "workbench.editor.showIcons": false,
-    "workbench.editor.decorations.badges": false,
-    "workbench.editor.decorations.colors": false,
-    "workbench.layoutControl.enabled": false,
-  
-    "merge-conflict.autoNavigateNextConflict.enabled": false,
-  
-    // Tools, extensions, and languages:
-    "problems.decorations.enabled": false,
-  
-    "git.autofetch": false,
-    "git.showInlineOpenFileAction": false,
-    "git.autorefresh": true,
-    "git.decorations.enabled": true,
-  
-    "python.formatting.provider": "none",
-    "python.terminal.activateEnvironment": true,
-    "python.linting.enabled": false,
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "off",
-    "python.analysis.autoImportCompletions": false,
-    "python.analysis.diagnosticSeverityOverrides": {
-      "reportMissingImports": "none",
-      "reportUnusedVariable": "none",
-    },
-  
-    "typescript.updateImportsOnFileMove.enabled": "never",
-    "typescript.suggest.autoImports": false,
-    "javascript.suggest.autoImports": false,
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "vetur.completion.autoImport": false,
-    "vetur.experimental.templateInterpolationService": true,
-  
-    "rust-analyzer.inlayHints.enable": false,
-  
-    // Theme:
-    "workbench.colorTheme": "Nord",
-  
-    "editor.semanticHighlighting.enabled": false,
-    "workbench.colorCustomizations": {
-      "activityBar.activeBorder": "#e5b358",
-      "activityBar.foreground": "#797d7b",
-      "gitDecoration.modifiedResourceForeground": "#d4cb68",
-      "gitDecoration.addedResourceForeground": "#C2D94C",
-      "editorSuggestWidget.highlightForeground": "#e5b358",
-      "editorSuggestWidget.selectedBackground": "#1c2a42",
-      "tab.inactiveForeground": "#676b6a",
-      "sideBar.foreground": "#b3b1adBB",
-      "sideBarTitle.foreground": "#0a0e14",
-      // Disable wavy/squiggly underline in vscode
-      "editorError.foreground":   "#00000000",
-      "editorWarning.foreground": "#00000000",
-      "editorInfo.foreground":    "#00000000"
-    },
-    "editor.unicodeHighlight.nonBasicASCII": false,
-    "workbench.activityBar.visible": false,
-    "workbench.sideBar.location": "right",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-  }
-  
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        "workbench.view.extensions"
+      ]
+    }
+  ]
+  // Theme:
+  "workbench.colorTheme": "Nord",
+  "editor.semanticHighlighting.enabled": false,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBorder": "#e5b358",
+    "activityBar.foreground": "#797d7b",
+    "gitDecoration.modifiedResourceForeground": "#d4cb68",
+    "gitDecoration.addedResourceForeground": "#C2D94C",
+    "editorSuggestWidget.highlightForeground": "#e5b358",
+    "editorSuggestWidget.selectedBackground": "#1c2a42",
+    "tab.inactiveForeground": "#676b6a",
+    "sideBar.foreground": "#b3b1adBB",
+    "sideBarTitle.foreground": "#0a0e14",
+    // Disable wavy/squiggly underline in vscode
+    "editorError.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000"
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "workbench.activityBar.visible": false,
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+}

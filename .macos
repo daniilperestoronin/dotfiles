@@ -4,7 +4,11 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -59,5 +63,5 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 for app in "Dock" \
 	"ControlStrip" \
 	"Finder"; do
-	killall "${app}" &> /dev/null
+	killall "${app}" &>/dev/null
 done

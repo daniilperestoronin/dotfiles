@@ -9,6 +9,8 @@ code --install-extension sumneko.lua
 code --install-extension rust-lang.rust-analyzer
 code --install-extension vue.volar
 code --install-extension vscodevim.vim
+code --install-extension timonwong.shellcheck
+code --install-extension foxundermoon.shell-format
 
 code --install-extension arcticicestudio.nord-visual-studio-code
 

@@ -129,7 +129,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 # Install oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 brew install bash-completion
-echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >> ~/.bash_profile
+echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >>~/.bash_profile
 
 # Install Nerd Fonts
 brew tap homebrew/cask-fonts
@@ -138,8 +138,8 @@ brew install --cask font-roboto-mono-nerd-font
 # Use zsh by default
 chsh -s /bin/zsh
 
-read -p "Are you what to update macOS settings? (y/n)" -n 1;
-echo "";
+read -p "Are you what to update macOS settings? (y/n)" -n 1
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sh .macos
+    sh .macos
 fi

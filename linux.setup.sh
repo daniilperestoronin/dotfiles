@@ -9,8 +9,7 @@ apt update
 
 apt -y install openjdk-17-jdk \
     maven \
-    python3 python3-pip\
-    golang-go \
+    python3 python3-pip golang-go \
     lua5.3
 
 snap install gradle --classic

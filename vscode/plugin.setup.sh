@@ -12,6 +12,7 @@ code --install-extension vscodevim.vim
 code --install-extension timonwong.shellcheck
 code --install-extension foxundermoon.shell-format
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension redhat.vscode-xml
 
 code --install-extension arcticicestudio.nord-visual-studio-code
 

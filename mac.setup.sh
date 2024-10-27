@@ -88,33 +88,35 @@ brew install protolint
 brew install hugo
 
 # Install virtualization and cloud things
-brew install --cask docker
 brew install kubectl
 brew install helm
-brew install --cask google-cloud-sdk
-brew install awscli
+
 # Install lens
 brew install --cask lens
 
 # Install API platforms
 # Install postman
 brew install --cask postman
-# Install bloomrpc
-brew install --cask bloomrpc
+# Install grpcurl
+brew install grpcurl
 
 # Install text editors and ide
+# Install helix
+brew install helix
 # Install nvim
 brew install neovim
 # Install VSC
 brew install --cask visual-studio-code
+# Install Idea CE
+brew install --cask intellij-idea-ce
 
 # Install telegram
 brew install --cask telegram-desktop
-# Install zoom
-brew install --cask zoom
 
 # Install chromium
 brew install --cask chromium
+# Install firefox
+brew install --cask firefox
 
 # Install macpass
 brew install --cask macpass

@@ -45,7 +45,8 @@ brew install git
 
 # Install terminal things
 brew install --cask alacritty
-brew install tmux
+brew install zellij
+brew install yazi
 
 # Install programming languages
 brew install openjdk

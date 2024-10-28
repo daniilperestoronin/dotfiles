@@ -89,6 +89,8 @@ brew install protolint
 brew install hugo
 
 # Install virtualization and cloud things
+brew install podman
+brew install minikube
 brew install kubectl
 brew install helm
 

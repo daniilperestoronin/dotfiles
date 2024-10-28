@@ -104,8 +104,6 @@ brew install grpcurl
 # Install text editors and ide
 # Install helix
 brew install helix
-# Install nvim
-brew install neovim
 # Install VSC
 brew install --cask visual-studio-code
 # Install Idea CE

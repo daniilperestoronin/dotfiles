@@ -20,7 +20,7 @@ fi
 read -p "Are you whant to copy dotfiles in your home directory(This may overwrite existing files)? (y/n)" -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	cp -a ./.config .bashrc .zshrc .tmux.conf ~
+	cp -a ./.config .bashrc .zshrc ~
 
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		cp ./vscode/settings.json $HOME/.config/Code/User/

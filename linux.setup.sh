@@ -12,6 +12,7 @@ apt -y install \
     grep \
     bat \
     fzf \
+    curl \
     findutils \
     dnsutils \
     net-tools \
@@ -62,11 +63,12 @@ pip3 install yamllint
 npm install yarn
 
 # terminal, code editors
-cargo install alacritty
-cargo install --locked zellij
+snap install alacritty --classic
+snap install zellij --classic
 snap install helix --classic
 
-apt install code # vsc
+sudo snap install --classic code # vsc
+bash vscode/plugin.setup.sh
 
 ########################################################
 # Install utils

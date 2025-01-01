@@ -1,20 +1,46 @@
-code --install-extension vscjava.vscode-java-pack
-code --install-extension vscjava.vscode-gradle
-code --install-extension vscjava.vscode-lombok
-code --install-extension pivotal.vscode-boot-dev-pack
-code --install-extension ms-python.python
-code --install-extension ms-vscode.vscode-typescript-next
-code --install-extension golang.go
-code --install-extension sumneko.lua
-code --install-extension rust-lang.rust-analyzer
-code --install-extension vue.volar
-code --install-extension vscodevim.vim
-code --install-extension timonwong.shellcheck
-code --install-extension foxundermoon.shell-format
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension redhat.vscode-xml
-code --install-extension redhat.vscode-yaml
-
-code --install-extension arcticicestudio.nord-visual-studio-code
-
-code --install-extension hediet.vscode-drawio
+code --install-extension 4ops.terraform \
+    akamud.vscode-theme-onedark \
+    arcticicestudio.nord-visual-studio-code \
+    atommaterial.a-file-icon-vscode \
+    davidanson.vscode-markdownlint \
+    dustypomerleau.rust-syntax \
+    eamodio.gitlens \
+    github.copilot \
+    github.copilot-chat \
+    golang.go \
+    hashicorp.terraform \
+    hediet.vscode-drawio \
+    korekontrol.saltstack \
+    ms-azuretools.vscode-docker \
+    ms-kubernetes-tools.vscode-kubernetes-tools \
+    ms-python.debugpy \
+    ms-python.isort \
+    ms-python.python \
+    ms-python.vscode-pylance \ \
+    ms-vscode-remote.remote-containers \
+    ms-vscode.makefile-tools \
+    ms-vscode.vscode-typescript-next \
+    rafaelrenanpacheco.darcula-theme \
+    redhat.fabric8-analytics \
+    redhat.java \
+    redhat.vscode-yaml \
+    rust-lang.rust-analyzer \
+    streetsidesoftware.code-spell-checker \
+    streetsidesoftware.code-spell-checker-russian \
+    sumneko.lua \
+    tamasfe.even-better-toml \
+    visualstudioexptteam.intellicode-api-usage-examples \
+    visualstudioexptteam.vscodeintellicode \
+    vmware.vscode-spring-boot \
+    vscjava.vscode-gradle \
+    vscjava.vscode-java-debug \
+    vscjava.vscode-java-dependency \
+    vscjava.vscode-java-pack \
+    vscjava.vscode-java-test \
+    vscjava.vscode-lombok \
+    vscjava.vscode-maven \
+    vscjava.vscode-spring-initializr \
+    vscode-icons-team.vscode-icons \
+    vscodevim.vim \
+    vue.volar \
+    zxh404.vscode-proto3

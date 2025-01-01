@@ -1,71 +1,91 @@
 #!/usr/bin/env bash
 
-# Update packages
+# Update packages and install snap
 apt update
+apt install snapd
+
+########################################################
+# Install tools
+########################################################
+
+apt -y install \
+    grep \
+    bat \
+    fzf \
+    findutils \
+    dnsutils \
+    net-tools \
+    netcat
 
 ########################################################
 # Install programming languages
 ########################################################
 
-apt -y install openjdk-17-jdk \
-    maven \
-    python3 python3-pip golang-go \
-    lua5.3
+# java, python, go, js
+apt -y install \
+    openjdk-21-jdk \
+    python3 python3-pip \
+    golang-go \
+    nodejs
 
-snap install gradle --classic
-
-snap install node --channel=19/stable --classic
-npm install --global yarn
-
+# Install rust
 curl https://sh.rustup.rs -sSf | sh
 export PATH=$PATH:$HOME/.cargo/bin
 
 ########################################################
-# Instsll dev tools
+# Install dev tools
 ########################################################
 
 apt -y install make \
     git \
-    tmux \
-    findutils \
-    grep \
-    bat \
-    fzf \
-    protobuf-compiler \
-    universal-ctags
+    protobuf-compiler
 
-cargo install alacritty
+# java
+apt install maven
+snap install gradle --classic
 
-snap install --beta nvim --classic
-pip3 install pynvim
-npm install -g neovim
+# golang
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest \
+    golang.org/x/tools/cmd/goimports@latest \
+    github.com/go-delve/delve/cmd/dlv@latest \
+    github.com/yoheimuta/protolint/cmd/protolint@latest \
+    github.com/fullstorydev/grpcui/cmd/grpcui@latest
 
-snap install code--classic
+# python
+pip3 install pylint \
+    flake8
 
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
-go install golang.org/x/tools/cmd/goimports@latest
-go install github.com/go-delve/delve/cmd/dlv@latest
-go install github.com/yoheimuta/protolint/cmd/protolint@latest
-go install github.com/fullstorydev/grpcui/cmd/grpcui@latest
-
-pip3 install pylint
-pip3 install flake8
-
+# yaml
 pip3 install yamllint
+
+# js
+npm install yarn
+
+# terminal, code editors
+cargo install alacritty
+cargo install --locked zellij
+snap install helix --classic
+
+apt install code # vsc
+
 ########################################################
 # Install utils
 ########################################################
 snap install docker
 
+# k8s
+snap install minikube
+snap install kubectl --classic
+snap install helm --classic
+
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+
 snap install hugo
 
-snap install kontena-lens --classic
 snap install postman
 
 snap install keepassxc --edge
-
 snap install telegram-desktop --edge
-snap install zoom-client --edge
 
 # Install oh-my-zsh
 apt -y install zsh

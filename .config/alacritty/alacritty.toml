@@ -49,15 +49,5 @@ text = "CellForeground"
 cursor = "#d8dee9"
 text = "#2e3440"
 
-[font.bold]
-family = "RobotoMono Nerd Font"
-
-[font.italic]
-family = "RobotoMono Nerd Font"
-
-[font.normal]
-family = "RobotoMono Nerd Font Mono"
-style = "Regular"
-
 [window]
 opacity = 0.95

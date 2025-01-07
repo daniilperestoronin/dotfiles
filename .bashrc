@@ -131,3 +131,4 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 
 export GO111MODULE='on'
+export PATH=${PATH}:`go env GOPATH`/bin

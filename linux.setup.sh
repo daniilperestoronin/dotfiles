@@ -46,11 +46,13 @@ apt install maven
 snap install gradle --classic
 
 # golang
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest \
-    golang.org/x/tools/cmd/goimports@latest \
-    github.com/go-delve/delve/cmd/dlv@latest \
-    github.com/yoheimuta/protolint/cmd/protolint@latest \
-    github.com/fullstorydev/grpcui/cmd/grpcui@latest
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go install github.com/nametake/golangci-lint-langserver@latest
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/yoheimuta/protolint/cmd/protolint@latest
+go install github.com/fullstorydev/grpcui/cmd/grpcui@latest
 
 # python
 pip3 install \

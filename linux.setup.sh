@@ -53,8 +53,12 @@ go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest \
     github.com/fullstorydev/grpcui/cmd/grpcui@latest
 
 # python
-pip3 install pylint \
-    flake8
+pip3 install \
+    pylint \
+    flake8 \
+    ruff \
+    jedi-language-server \
+    python-lsp-server
 
 # yaml
 pip3 install yamllint

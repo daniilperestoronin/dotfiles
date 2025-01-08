@@ -64,9 +64,12 @@ pip3 install \
 
 # yaml
 pip3 install yamllint
+snap install yaml-language-server
 
 # js
-npm install yarn
+apt install npm
+npm install -g yarn
+npm install -g typescript-language-server typescript
 
 # terminal, code editors
 snap install alacritty --classic

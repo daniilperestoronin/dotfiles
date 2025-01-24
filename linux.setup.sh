@@ -25,7 +25,7 @@ apt -y install \
 # java, python, go, js
 apt -y install \
     openjdk-21-jdk \
-    python3 python3-pip \
+    python3 python3-pip python3-venv\
     golang-go \
     nodejs
 

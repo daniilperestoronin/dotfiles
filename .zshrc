@@ -111,3 +111,8 @@ export PATH=${PATH}:`go env GOPATH`/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Aliases
+alias k=kubectl
+alias h=helm

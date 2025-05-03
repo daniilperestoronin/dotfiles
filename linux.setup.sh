@@ -76,8 +76,10 @@ snap install alacritty --classic
 snap install zellij --classic
 snap install helix --classic
 
-sudo snap install --classic code # vsc
-bash vscode/plugin.setup.sh
+snap install --classic code # vsc
+bash ./vscode/plugin.setup.sh
+
+snap install intellij-idea-community --classic
 
 ########################################################
 # Install utils
@@ -85,9 +87,15 @@ bash vscode/plugin.setup.sh
 snap install docker
 
 # k8s
-snap install minikube
 snap install kubectl --classic
 snap install helm --classic
+
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+git clone https://github.com/ahmetb/kubectx /opt/kubectx
+ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
@@ -98,6 +106,7 @@ snap install postman
 snap install keepassxc --edge
 snap install telegram-desktop --edge
 snap install obsidian --classic
+snap install firefox
 
 # Install oh-my-zsh
 apt -y install zsh
@@ -105,6 +114,6 @@ bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 # Install oh-my-bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" 
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 chsh -s $(which zsh)

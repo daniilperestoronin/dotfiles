@@ -132,3 +132,9 @@ source "$OSH"/oh-my-bash.sh
 
 export GO111MODULE='on'
 export PATH=${PATH}:`go env GOPATH`/bin
+
+# Aliases
+alias k=kubectl
+alias h=helm
+alias kns=kubens
+alias ktx=kubectx

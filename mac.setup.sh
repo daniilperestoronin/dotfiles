@@ -94,6 +94,10 @@ brew install minikube
 brew install kubectl
 brew install helm
 
+git clone https://github.com/ahmetb/kubectx /opt/kubectx
+ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
 # Install lens
 brew install --cask lens
 
@@ -108,6 +112,8 @@ brew install grpcurl
 brew install helix
 # Install VSC
 brew install --cask visual-studio-code
+bash ./vscode/plugin.setup.sh
+
 # Install Idea CE
 brew install --cask intellij-idea-ce
 
@@ -125,8 +131,7 @@ brew install --cask macpass
 # Plugins plugins
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
-wait
+bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 # Install oh-my-bash
